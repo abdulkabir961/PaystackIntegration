@@ -1,0 +1,37 @@
+﻿@*@model DonateViewModel*@
+@{
+    ViewData["Title"] = "Donations";
+    var transactions = ViewData["transactions"] as List<TransactionModel>;
+}
+
+<h1>Donations</h1>
+<hr />
+
+<br />
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount</th>
+                <th>Transaction Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in transactions)
+            {
+                <tr>
+                    <td>@transaction.Name</td>
+                    <td>@transaction.Email</td>
+                    <td>@transaction.Amount</td>
+                    <td>@transaction.TransactionRef</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
